@@ -1,0 +1,36 @@
+.Cv-container{
+   width: 100%;
+   min-width: 600px;
+   max-width: 800px;
+   margin: 20px, auto;
+   padding: 20px;
+   border: 2px solid #646cff;
+   border-radius: 10px;
+   box-shadow: 4px, 4px, 10px rgba(0,0,0,0.1);
+   font-family: arial,sans-serif;
+   background-color: #f9f9f9;
+}
+.Cv-header{
+    text-align: center;
+    color: #535bf2;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.Cv-section{
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.Cv-section:last-child{
+    border-bottom: none;
+}
+.Cv-title{
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+    background-color: #ddd;
+    max-width: 200px;
+    border-radius: 4px;
+}

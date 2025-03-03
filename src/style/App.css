@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 350px;
+    max-width:400px;
+    padding-top: 30px;
+    padding-left:20px;
+    margin-right: 20px;
+    background-color: #ddd;
+    border-radius:10px ;
+}
+
+button{
+    margin: 5px;
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    color: #ddd;
+}

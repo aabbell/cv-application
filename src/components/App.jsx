@@ -3,7 +3,8 @@ import General from "./General.jsx";
 import Education from "./Education.jsx";
 import Experience from "./Experience.jsx";
 import Cv from "./Cv.jsx";
-
+import Button from "./Button.jsx";
+import "../style/App.css"
 
 
 function App (){
@@ -34,8 +35,11 @@ function App (){
     const updateExperience = (field, value) => {
         setExperienceInfo((prevState) => ({ ...prevState,[field]: value}))
     }
+    const [showCv, setShowCv] = useState(false)
     return(
-        <div>
+        <div className="container">
+            <div className="input-field">
+            <div className="input">
             <General
             generalInfo = {generalInfo}
             updateGeneral = {updateGeneral}
@@ -48,12 +52,29 @@ function App (){
             experienceInfo = {experienceInfo}
             updateExperience = {updateExperience}
             />
-
-            <Cv
-            generalInfo = {generalInfo}
-            educationInfo = {educationInfo}
-            experienceInfo = {experienceInfo}
-            />
+            </div>
+            <div className="buttons">
+            <Button handleClick={()=> setShowCv(true)}/>
+            <Button 
+            text="clear" 
+            backgroundColor="red" 
+            handleClick={() => { 
+                setShowCv(false)
+                setGeneralInfo({ name: "", email: "", phoneNumber: "" });
+                setEducationInfo({ schoolName: "", titleOfStudy: "", dateOfStudy: "" });
+                setExperienceInfo({ companyName: "", positionTitle: "", mainResponsibilities: "" })
+            }}/>
+            </div>
+            </div>
+            <div className="Cv-field">
+           {showCv && (<Cv 
+                    generalInfo={generalInfo}
+                    educationInfo={educationInfo}
+                    experienceInfo={experienceInfo}
+                    />
+           )}
+           </div>
+            
         </div>
     )
 }
